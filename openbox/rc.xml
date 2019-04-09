@@ -844,5 +844,14 @@
     <application name="telegram-desktop">
       <decor>no</decor>
     </application>
+    <application name="cantata" type="normal">
+      <decor>no</decor>
+    </application>
+    <application name="pcmanfm-qt" type="normal">
+      <decor>no</decor>
+    </application>
+    <application class="*">
+      <focus>yes</focus>
+    </application>
   </applications>
 </openbox_config>
