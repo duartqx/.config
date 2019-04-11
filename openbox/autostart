@@ -1,11 +1,7 @@
 nitrogen --restore &
 
-compton -f --backend glx  &
+compton -f &
 
 tint2 &
-
-pulseaudio &
-
-volti &
 
 

@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Numix Solarized</name>
+    <name>Arc-Dark</name>
     <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -153,10 +153,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>24</top>
-    <bottom>5</bottom>
-    <left>5</left>
-    <right>5</right>
+    <top>26</top>
+    <bottom>8</bottom>
+    <left>8</left>
+    <right>8</right>
   </margins>
   <dock>
     <position>TopLeft</position>
@@ -361,7 +361,7 @@
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>rofi -show run -font "DejaVu Mono 14" -theme "solarized"</command>
+        <command>rofi -terminal qterminal -show run -font "DejaVu Sans 14" -theme "Arc-Dark"</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -369,6 +369,58 @@
         <command>qterminal</command>
       </action>
     </keybind>
+   
+    <!-- Media Control Keybindings -->
+   
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer set Master 5-</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer set Master 5+</command>
+      </action>
+    </keybind>
+    
+    <!-- Screen Brightness Keybind -->  
+
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>xbacklight +10</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -10</command>
+      </action>
+    </keybind>
+
+    <!-- Keybindings to toggle fullscreen -->
+    <keybind key="F11">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
@@ -389,25 +441,25 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
+      <mousebind button="W-Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind button="A-Left" action="Click">
+      <mousebind button="W-Left" action="Click">
         <action name="Unshade"/>
       </mousebind>
-      <mousebind button="A-Left" action="Drag">
+      <mousebind button="W-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
-      <mousebind button="A-Right" action="Press">
+      <mousebind button="W-Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
-      <mousebind button="A-Right" action="Drag">
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
-      <mousebind button="A-Middle" action="Press">
+      <mousebind button="W-Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
@@ -848,6 +900,9 @@
       <decor>no</decor>
     </application>
     <application name="pcmanfm-qt" type="normal">
+      <decor>no</decor>
+    </application>
+    <application name="mpv">
       <decor>no</decor>
     </application>
     <application class="*">
