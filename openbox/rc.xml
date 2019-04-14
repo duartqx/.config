@@ -361,17 +361,15 @@
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>rofi -terminal qterminal -show run -font "DejaVu Sans 14" -theme "Arc-Dark"</command>
+        <command>rofi -terminal st -show run -theme "dmenu-arc" -height 22px</command>
       </action>
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>qterminal</command>
+        <command>st -g 130x80</command>
       </action>
     </keybind>
-   
     <!-- Media Control Keybindings -->
-   
     <keybind key="XF86AudioNext">
       <action name="Execute">
         <command>playerctl next</command>
@@ -394,17 +392,15 @@
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set Master 5-</command>
+        <command>sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"</command>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer set Master 5+</command>
+        <command>sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"</command>
       </action>
     </keybind>
-    
-    <!-- Screen Brightness Keybind -->  
-
+    <!-- Screen Brightness Keybind -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>xbacklight +10</command>
@@ -415,12 +411,10 @@
         <command>xbacklight -10</command>
       </action>
     </keybind>
-
     <!-- Keybindings to toggle fullscreen -->
     <keybind key="F11">
       <action name="ToggleFullscreen"/>
     </keybind>
-
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
@@ -889,6 +883,13 @@
     </application>
     <application name="krita">
       <decor>no</decor>
+    </application>
+    <application name="st">
+      <decor>no</decor>
+      <size>
+        <width>950</width>
+        <height>1046</height>
+      </size>
     </application>
     <application name="qterminal">
       <decor>no</decor>

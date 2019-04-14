@@ -4,4 +4,4 @@ compton -f &
 
 tint2 &
 
-
+xrdb -merge ~/.Xresources-home-desk &
