@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Arc-Dark</name>
+    <name>Adapta-Teal-Nokto</name>
     <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -153,10 +153,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>26</top>
-    <bottom>8</bottom>
-    <left>8</left>
-    <right>8</right>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
   </margins>
   <dock>
     <position>TopLeft</position>
@@ -246,6 +246,9 @@
       <action name="GoToDesktop">
         <to>4</to>
       </action>
+    </keybind>
+    <keybind key="W-F8">
+      <action name="ToggleAlwaysOnTop"/>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
@@ -354,14 +357,14 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>PcmanFM</name>
+          <name>Thunar</name>
         </startupnotify>
-        <command>pcmanfm-qt</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>rofi -terminal st -show run -theme "dmenu-arc" -height 22px</command>
+        <command>rofi -terminal st -show run -theme "dmenu-adapta-red" -height 22px</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -369,7 +372,22 @@
         <command>st</command>
       </action>
     </keybind>
-    <!-- Media Control Keybindings -->
+    <keybind key="W-f">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>telegram-desktop</command>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>gnome-calculator</command>
+      </action>
+    </keybind>
+    <!-- Media Control Keybindings
     <keybind key="XF86AudioNext">
       <action name="Execute">
         <command>playerctl next</command>
@@ -388,6 +406,22 @@
     <keybind key="XF86AudioStop">
       <action name="Execute">
         <command>playerctl stop</command>
+      </action>
+    </keybind> -->
+    <!-- CMUS Media Control Keybindings -->
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>cmus-remote -n</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>cmus-remote -r</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>cmus-remote -u</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
@@ -908,6 +942,10 @@
     </application>
     <application class="*">
       <focus>yes</focus>
+      <decor>no</decor>
+    </application>
+    <application name="thunar" type="normal">
+      <decor>no</decor>
     </application>
   </applications>
 </openbox_config>
